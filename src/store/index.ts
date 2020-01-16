@@ -5,6 +5,7 @@ import { createLogger } from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 // Imports: Redux
 import rootReducer from '../reducers/index';
+import {composeWithDevTools} from "redux-devtools-extension";
 // Middleware: Redux Persist Config
 const persistConfig = {
     // Root
@@ -20,13 +21,19 @@ const persistConfig = {
     blacklist: [
     ],
 };
+
+const composeEnhancers = composeWithDevTools({
+    // Specify here name, actionsBlacklist, actionsCreators and other options
+});
 // Middleware: Redux Persist Persisted Reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Redux: Store
 const store = createStore(
     persistedReducer,
-    applyMiddleware(
-        createLogger(),
+    composeEnhancers(
+        applyMiddleware(
+            // createLogger(),
+        )
     ),
 );
 // Middleware: Redux Persist Persister

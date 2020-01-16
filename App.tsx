@@ -31,12 +31,18 @@ export default function App() {
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <Counter />
-                <Text>Redux dev tools</Text>
                 <Text>Navigation</Text>
                 <Text>Deep linking</Text>
                 <Text>Photo/Video</Text>
                 <Text>Push notifications/Custom android/ios</Text>
+                <Text>Custom image picker</Text>
                 <Text>Animations</Text>
+                <Text>card/google payment</Text>
+                <Text>sockets</Text>
+                <Text>map navigation</Text>
+                <Text>chatting</Text>
+                <Text>broadcasting</Text>
+                <Text>charts</Text>
             </PersistGate>
         </Provider>
     );
