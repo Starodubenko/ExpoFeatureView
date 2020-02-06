@@ -106,4 +106,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 // Exports
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export const CounterScreen =  connect(mapStateToProps, mapDispatchToProps)(Counter);
